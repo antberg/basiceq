@@ -1,7 +1,7 @@
 /*
   ==============================================================================
 
-    This file contains the basic framework code for a JUCE plugin editor.
+	This file contains the basic framework code for a JUCE plugin editor.
 
   ==============================================================================
 */
@@ -9,32 +9,33 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-//==============================================================================
-BasiceqAudioProcessorEditor::BasiceqAudioProcessorEditor (BasiceqAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
-{
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
-    setSize (400, 300);
-}
-
-BasiceqAudioProcessorEditor::~BasiceqAudioProcessorEditor()
-{
-}
+using namespace BasicEQ;
 
 //==============================================================================
-void BasiceqAudioProcessorEditor::paint (juce::Graphics& g)
+BasicEQAudioProcessorEditor::BasicEQAudioProcessorEditor( BasicEQAudioProcessor& p )
+	: AudioProcessorEditor( &p ), audioProcessor( p )
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+	// Make sure that before the constructor has finished, you've set the
+	// editor's size to whatever you need it to be.
+	setSize( 400, 300 );
 }
 
-void BasiceqAudioProcessorEditor::resized()
+BasicEQAudioProcessorEditor::~BasicEQAudioProcessorEditor()
+{}
+
+//==============================================================================
+void BasicEQAudioProcessorEditor::paint( juce::Graphics& g )
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+	// (Our component is opaque, so we must completely fill the background with a solid colour)
+	g.fillAll( getLookAndFeel().findColour( juce::ResizableWindow::backgroundColourId ) );
+
+	g.setColour( juce::Colours::white );
+	g.setFont( 15.0f );
+	g.drawFittedText( "Hello World!", getLocalBounds(), juce::Justification::centred, 1 );
+}
+
+void BasicEQAudioProcessorEditor::resized()
+{
+	// This is generally where you'll want to lay out the positions of any
+	// subcomponents in your editor..
 }

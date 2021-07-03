@@ -1,7 +1,7 @@
 /*
   ==============================================================================
 
-    This file contains the basic framework code for a JUCE plugin editor.
+	This file contains the basic framework code for a JUCE plugin editor.
 
   ==============================================================================
 */
@@ -11,23 +11,28 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 
+namespace BasicEQ
+{
+
 //==============================================================================
 /**
 */
-class BasiceqAudioProcessorEditor  : public juce::AudioProcessorEditor
+class BasicEQAudioProcessorEditor : public juce::AudioProcessorEditor
 {
 public:
-    BasiceqAudioProcessorEditor (BasiceqAudioProcessor&);
-    ~BasiceqAudioProcessorEditor() override;
+	BasicEQAudioProcessorEditor( BasicEQAudioProcessor& );
+	~BasicEQAudioProcessorEditor() override;
 
-    //==============================================================================
-    void paint (juce::Graphics&) override;
-    void resized() override;
+	//==============================================================================
+	void paint( juce::Graphics& ) override;
+	void resized() override;
 
 private:
-    // This reference is provided as a quick way for your editor to
-    // access the processor object that created it.
-    BasiceqAudioProcessor& audioProcessor;
+	// This reference is provided as a quick way for your editor to
+	// access the processor object that created it.
+	BasicEQAudioProcessor& audioProcessor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BasiceqAudioProcessorEditor)
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR( BasicEQAudioProcessorEditor )
 };
+
+}
